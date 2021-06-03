@@ -50,6 +50,24 @@ module.exports = {
                         // }
                     }
                 ],
+            },
+            {
+                /**
+                 * 语法检查 eslint-loader eslint 只检查源代码 ，第三方库不检查
+                 * 设置检查规则
+                 * package.json中eslintConfig中设置~
+                 * "eslintConfig":{
+                 *      "extends": "airbnb-base"
+                 * }
+                 * airbnb --> eslint-config-airbnb-base  eslint-plugin-import  eslint
+                 */
+                test:/\.js$/,
+                exclude:/node_modules/,
+                loader:'eslint-loader',
+                options:{
+                    fix:true
+                }
+
             }
         ]
     },

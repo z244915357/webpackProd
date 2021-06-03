@@ -22,3 +22,11 @@ process.env.NODE_ENV = 'development' 文件编译会按开发环境进行编译
 使用方法 1.下载 2.引入 3.调用   
 下载 npm i optimize-css-assets-webpack-plugin
 具体使用方法在webpack.config.js中查看
+
+3.eslint配置 设置源代码的检测 
+下载依赖 eslint  eslint-loader   eslint-config-airbub-base eslint-plugin-import
+在package.json文件中
+  "eslintConfig": {
+    "extends": "airbnb-base"
+  }
+在webpack.config,js文件中设置eslint-loader  

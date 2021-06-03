@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_a_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/a.css */ \"./src/css/a.css\");\n/* harmony import */ var _css_b_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/b.css */ \"./src/css/b.css\");\n\n\n\nfunction add(x, y) {\n  return x + y;\n}\n\n//eslint-disable-next-line\nconsole.log(add(1, 2));\n\n\n//# sourceURL=webpack://webpacktest/./src/index.js?");
+
+/***/ }),
+
 /***/ "./src/css/a.css":
 /*!***********************!*\
   !*** ./src/css/a.css ***!
@@ -27,16 +37,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://webpacktest/./src/css/b.css?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_a_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/a.css */ \"./src/css/a.css\");\n/* harmony import */ var _css_b_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/b.css */ \"./src/css/b.css\");\n\r\n\n\n//# sourceURL=webpack://webpacktest/./src/index.js?");
 
 /***/ })
 
