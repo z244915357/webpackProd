@@ -18,3 +18,7 @@ module.exports = {
 
 process.env.NODE_ENV = 'development' 文件编译会按开发环境进行编译
 
+2.css压缩插件的使用  optimize-css-assets-webpack-plugin 
+使用方法 1.下载 2.引入 3.调用   
+下载 npm i optimize-css-assets-webpack-plugin
+具体使用方法在webpack.config.js中查看
