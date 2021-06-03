@@ -1,0 +1,12 @@
+#box1{
+    width:100px;
+    height:100px;
+    background: burlywood;
+    color:red;
+    display: flex;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+#box2{
+    color:blue;
+}

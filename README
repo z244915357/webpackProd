@@ -1,1 +1,20 @@
 README
+知识点
+1.使用 postcss 处理浏览器css兼容性问题 需要使用postcss-loader 和 postcss-preset-env（用来帮助webpack寻找browerslist目标，目标定义在package.json文件中） 
+当前使用5.3.0版本postcss-loader  遇到的问题
+不能直接在webpack.config.js 文件中写处理，版本不兼容会报异常
+
+解决方法
+在根目录新建一个 postcss.config.js ，文件中写入下面代码
+module.exports = {
+    plugins:[
+        require('postcss-preset-env')()
+    ]
+}
+
+在进行打包指令打包时  会默认按生产环境进行css兼容性处理
+
+在webpack.config.js中使用nodejs环境变量
+
+process.env.NODE_ENV = 'development' 文件编译会按开发环境进行编译
+
