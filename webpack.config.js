@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
 const optimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 //设置nodejs环境变量 不配置，默认使用生产环境  production
-process.env.NODE_ENV = 'development'
+// process.env.NODE_ENV = 'development'
 
 // optimize-css-assets-webpack-plugin 压缩插件
 module.exports = {
@@ -51,24 +51,24 @@ module.exports = {
                     }
                 ],
             },
-            {
-                /**
-                 * 语法检查 eslint-loader eslint 只检查源代码 ，第三方库不检查
-                 * 设置检查规则
-                 * package.json中eslintConfig中设置~
-                 * "eslintConfig":{
-                 *      "extends": "airbnb-base"
-                 * }
-                 * airbnb --> eslint-config-airbnb-base  eslint-plugin-import  eslint
-                 */
-                test:/\.js$/,
-                exclude:/node_modules/,
-                loader:'eslint-loader',
-                options:{
-                    fix:true
-                }
+            // {
+            //     /**
+            //      * 语法检查 eslint-loader eslint 只检查源代码 ，第三方库不检查
+            //      * 设置检查规则
+            //      * package.json中eslintConfig中设置~
+            //      * "eslintConfig":{
+            //      *      "extends": "airbnb-base"
+            //      * }
+            //      * airbnb --> eslint-config-airbnb-base  eslint-plugin-import  eslint
+            //      */
+            //     test:/\.js$/,
+            //     exclude:/node_modules/,
+            //     loader:'eslint-loader',
+            //     options:{
+            //         fix:true
+            //     }
 
-            },
+            // },
             {
                 /**
                  * 1.js兼容性处理 babel-loader|
@@ -76,8 +76,11 @@ module.exports = {
                  * 2. 全部的js兼容性处理 使用@bable/polyfill
                  * 3.需要做兼容性处理才执行：按需加载 corejs
                  */
+                // test:/\.js$/,
+                // exclude:/node_modules/,
                 // loader:'babel-loader',
                 // options:{
+                //     // 预设环境兼容性处理
                 //     presets:['@babel/preset-env']
                 // }
                 test:/\.js$/,
@@ -85,23 +88,25 @@ module.exports = {
                 loader:'babel-loader',
                 options:{
                     presets:[
-                        '@babel/preset-env',
-                        {
-                            // 按需加载
-                            useBuiltIns:'usage',
-                            // 制定core-js版本
-                            corejs:{
-                                version:3
-                            },
-                            // 指定兼容浏览器版本
-                            targets:{
-                                chrome:'60',
-                                firefox:'60',
-                                ie:'9',
-                                safari:'10',
-                                edge:'17'
+                        [
+                            '@babel/preset-env',
+                            {
+                                // 按需加载
+                                useBuiltIns:'usage',
+                                // 制定core-js版本
+                                corejs:{
+                                    version:3
+                                },
+                                // 指定兼容浏览器版本
+                                targets:{
+                                    chrome:'60',
+                                    firefox:'60',
+                                    ie:'9',
+                                    safari:'10',
+                                    edge:'17'
+                                }
                             }
-                        }
+                        ]   
                     ]
                 }
             }
@@ -123,6 +128,7 @@ module.exports = {
         port:3000,
         open:true
     },
-  
-    mode:'development'
+    // 生产环境会自动压缩js代码 
+    // process.env.NODE_ENV  是nodsjs环境变量，我们打包时会根据不同环境 打包代码  dev开发环境打包不会压缩代码  prod生产环境打包会压缩代码（css，js，img等其他文件，降低文件大小）  
+    mode: process.env.NODE_ENV
 }

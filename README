@@ -31,11 +31,11 @@ process.env.NODE_ENV = 'development' 文件编译会按开发环境进行编译
   }
 在webpack.config,js文件中设置eslint-loader  
 
-4.js兼容性处理 babel
+4.js兼容性处理使用  babel-loader  @babel/core 
 常用于es语法处理  兼容ie浏览器  或者 处理特殊语法如 promise 类型函数
 普通处理方式直接调用bable-loader
 全部处理  使用@bable/polyfill 插件进行处理 使用基本处理配置 下载文件后直接在需要处理的js文件中引入即可，不需要其他配置
-按需处理  第三种处理方式需要重新书写处理 
+按需处理  第三种处理方式需要重新书写处理 使用 core-js 
 如下
 
 {
@@ -65,4 +65,4 @@ process.env.NODE_ENV = 'development' 文件编译会按开发环境进行编译
                 }
 }
 
- 
+5. 生产环境会打包会自动压缩html js 代码  modu:值设置成nodejs环境变量process.env.NODE_ENV 当项目打包时会根据不同环境进行不同的打包

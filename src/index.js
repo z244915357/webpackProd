@@ -1,6 +1,6 @@
 import './css/a.css';
 import './css/b.css';
-// import '@babel/polyfill';
+// import '@babel/polyfill'; // 只能转换基本语法 打包时不能转换promise语法
 
 const add = (x, y) => x + y; // eslint-disable-next-line 表示eslint检查忽略此行代码后的检测 不建议使用
 
