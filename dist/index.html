@@ -1,17 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>webpack</title>
-<script defer src="js/main.js"></script><link href="css/built.css" rel="stylesheet"></head>
-<body>
-    <div id="box1">
-        入口文件111
-    </div>
-    <div id="box2">
-        入口文件2222
-    </div>
-</body>
-</html>
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed (from ./node_modules/babel-loader/lib/index.js):
+  SyntaxError: D:\webpack\webpackProd\src\index.html: Unexpected token (1:0)
+  > 1 | <!DOCTYPE html>  m
+      | ^
+    2 | <html lang="en"><head><script defer src="js/main.js"></script></head>
+    3 | <head>
+    4 |     <meta charset="UTF-8">  [0m
+  
+  - index.js:810 Parser._raise
+    [webpackProd]/[@babel]/parser/lib/index.js:810:17
+  
+  - index.js:803 Parser.raiseWithData
+    [webpackProd]/[@babel]/parser/lib/index.js:803:17
+  
+  - index.js:764 Parser.raise
+    [webpackProd]/[@babel]/parser/lib/index.js:764:17
+  
+  - index.js:9980 Parser.unexpected
+    [webpackProd]/[@babel]/parser/lib/index.js:9980:16
+  
+  - index.js:11382 Parser.parseExprAtom
+    [webpackProd]/[@babel]/parser/lib/index.js:11382:20
+  
+  - index.js:10954 Parser.parseExprSubscripts
+    [webpackProd]/[@babel]/parser/lib/index.js:10954:23
+  
+  - index.js:10934 Parser.parseUpdate
+    [webpackProd]/[@babel]/parser/lib/index.js:10934:21
+  
+  - index.js:10912 Parser.parseMaybeUnary
+    [webpackProd]/[@babel]/parser/lib/index.js:10912:23
+  
+  - index.js:10769 Parser.parseExprOps
+    [webpackProd]/[@babel]/parser/lib/index.js:10769:23
+  
+  - index.js:10743 Parser.parseMaybeConditional
+    [webpackProd]/[@babel]/parser/lib/index.js:10743:23
+  
+  - ModuleBuildError: Module build failed (from ./node_modules/babel-loader/lib/index.js):
+  
+  - SyntaxError: D:\webpack\webpackProd\src\index.html: Unexpected token (1:0)
+  
+  - > 1 | <!DOCTYPE html>    [0m
+  
+  -     | ^
+  
+  -   2 | <html lang="en">
+  
+  -   3 | <head>
+  
+  -   4 |     <meta charset="UTF-8">    m
+  
+  - index.js:810 Parser._raise
+    [webpackProd]/[@babel]/parser/lib/index.js:810:17
+  
+  - index.js:803 Parser.raiseWithData
+    [webpackProd]/[@babel]/parser/lib/index.js:803:17
+  
+  - index.js:764 Parser.raise
+    [webpackProd]/[@babel]/parser/lib/index.js:764:17
+  
+  - index.js:9980 Parser.unexpected
+    [webpackProd]/[@babel]/parser/lib/index.js:9980:16
+  
+  - index.js:11382 Parser.parseExprAtom
+    [webpackProd]/[@babel]/parser/lib/index.js:11382:20
+  
+  - index.js:10954 Parser.parseExprSubscripts
+    [webpackProd]/[@babel]/parser/lib/index.js:10954:23
+  
+  - index.js:10934 Parser.parseUpdate
+    [webpackProd]/[@babel]/parser/lib/index.js:10934:21
+  
+  - index.js:10912 Parser.parseMaybeUnary
+    [webpackProd]/[@babel]/parser/lib/index.js:10912:23
+  
+  - index.js:10769 Parser.parseExprOps
+    [webpackProd]/[@babel]/parser/lib/index.js:10769:23
+  
+  - index.js:10743 Parser.parseMaybeConditional
+    [webpackProd]/[@babel]/parser/lib/index.js:10743:23
+  
+  - NormalModule.js:703 processResult
+    [webpackProd]/[webpack]/lib/NormalModule.js:703:19
+  
+  - NormalModule.js:809 
+    [webpackProd]/[webpack]/lib/NormalModule.js:809:5
+  
+  - LoaderRunner.js:399 
+    [webpackProd]/[loader-runner]/lib/LoaderRunner.js:399:11
+  
+  - LoaderRunner.js:251 
+    [webpackProd]/[loader-runner]/lib/LoaderRunner.js:251:18
+  
+  - LoaderRunner.js:124 context.callback
+    [webpackProd]/[loader-runner]/lib/LoaderRunner.js:124:13
+  
+  - index.js:59 
+    [webpackProd]/[babel-loader]/lib/index.js:59:103
+  
+  - child-compiler.js:169 
+    [webpackProd]/[html-webpack-plugin]/lib/child-compiler.js:169:18
+  
+  - Compiler.js:538 
+    [webpackProd]/[webpack]/lib/Compiler.js:538:11
+  
+  - Compiler.js:1106 
+    [webpackProd]/[webpack]/lib/Compiler.js:1106:17
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [webpackProd]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1102 
+    [webpackProd]/[webpack]/lib/Compiler.js:1102:33
+  
+  - Compilation.js:2525 
+    [webpackProd]/[webpack]/lib/Compilation.js:2525:11
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [webpackProd]/[tapable]/lib/Hook.js:18:14
+  
+  - Compilation.js:2518 
+    [webpackProd]/[webpack]/lib/Compilation.js:2518:38
+  
+</pre>

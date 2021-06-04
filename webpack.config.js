@@ -68,6 +68,42 @@ module.exports = {
                     fix:true
                 }
 
+            },
+            {
+                /**
+                 * 1.js兼容性处理 babel-loader|
+                 * 只能转换基本的语法promiss 不能被转换
+                 * 2. 全部的js兼容性处理 使用@bable/polyfill
+                 * 3.需要做兼容性处理才执行：按需加载 corejs
+                 */
+                // loader:'babel-loader',
+                // options:{
+                //     presets:['@babel/preset-env']
+                // }
+                test:/\.js$/,
+                exclude:/node_modules/,
+                loader:'babel-loader',
+                options:{
+                    presets:[
+                        '@babel/preset-env',
+                        {
+                            // 按需加载
+                            useBuiltIns:'usage',
+                            // 制定core-js版本
+                            corejs:{
+                                version:3
+                            },
+                            // 指定兼容浏览器版本
+                            targets:{
+                                chrome:'60',
+                                firefox:'60',
+                                ie:'9',
+                                safari:'10',
+                                edge:'17'
+                            }
+                        }
+                    ]
+                }
             }
         ]
     },

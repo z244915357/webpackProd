@@ -30,3 +30,39 @@ process.env.NODE_ENV = 'development' 文件编译会按开发环境进行编译
     "extends": "airbnb-base"
   }
 在webpack.config,js文件中设置eslint-loader  
+
+4.js兼容性处理 babel
+常用于es语法处理  兼容ie浏览器  或者 处理特殊语法如 promise 类型函数
+普通处理方式直接调用bable-loader
+全部处理  使用@bable/polyfill 插件进行处理 使用基本处理配置 下载文件后直接在需要处理的js文件中引入即可，不需要其他配置
+按需处理  第三种处理方式需要重新书写处理 
+如下
+
+{
+   test:/\.js$/,
+                exclude:/node_modules/,
+                loader:'babel-loader',
+                options:{
+                    presets:[
+                        '@babel/preset-env',
+                        {
+                            // 按需加载
+                            useBuiltIns:'usage',
+                            // 制定core-js版本
+                            corejs:{
+                                version:3
+                            },
+                            // 指定兼容浏览器版本
+                            targets:{
+                                chrome:'60',
+                                firefox:'60',
+                                ie:'9',
+                                safari:'10',
+                                edge:'17'
+                            }
+                        }
+                    ]
+                }
+}
+
+ 
