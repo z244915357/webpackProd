@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
 const optimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 //设置nodejs环境变量 不配置，默认使用生产环境  production
-// process.env.NODE_ENV = 'development'
+process.env.NODE_ENV = 'development'
 
 // optimize-css-assets-webpack-plugin 压缩插件
 module.exports = {
@@ -122,13 +122,16 @@ module.exports = {
         }),
         new optimizeCssAssetsWebpackPlugin()
     ],
+      // 生产环境会自动压缩js代码 
+    // process.env.NODE_ENV  是nodsjs环境变量，我们打包时会根据不同环境 打包代码  dev开发环境打包不会压缩代码  prod生产环境打包会压缩代码（css，js，img等其他文件，降低文件大小）  
+    mode: process.env.NODE_ENV,
     devServer:{
         contentBase:resolve(__dirname,'dist'),
         compress:true,
         port:3000,
         open:true
     },
-    // 生产环境会自动压缩js代码 
-    // process.env.NODE_ENV  是nodsjs环境变量，我们打包时会根据不同环境 打包代码  dev开发环境打包不会压缩代码  prod生产环境打包会压缩代码（css，js，img等其他文件，降低文件大小）  
-    mode: process.env.NODE_ENV
+  
+
+    
 }

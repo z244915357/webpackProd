@@ -2,7 +2,7 @@
     width:100px;
     height:100px;
     background: burlywood;
-    color:red;
+    color:rgb(151, 34, 34);
     display: flex;
     backface-visibility: hidden;
 }

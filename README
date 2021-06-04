@@ -66,3 +66,4 @@ process.env.NODE_ENV = 'development' 文件编译会按开发环境进行编译
 }
 
 5. 生产环境会打包会自动压缩html js 代码  modu:值设置成nodejs环境变量process.env.NODE_ENV 当项目打包时会根据不同环境进行不同的打包
+
